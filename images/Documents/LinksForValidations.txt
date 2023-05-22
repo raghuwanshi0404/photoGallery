@@ -1,0 +1,18 @@
+1.https://en.wikibooks.org/wiki/Java_Persistence
+2.For validation in :-----> https://www.yawintutor.com/how-to-customize-default-error-message-using-controlleradvice-in-spring-boot-validation/
+3.Spring Boot Security + JWT
+
+
+
+
+
+
+Weakly switch
+
+Weak availablity manager
+
+
+
+order by depatment
+
+pdf  --->

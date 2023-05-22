@@ -1,0 +1,9 @@
+mail send exception : -> mail jb bhi bhja to ptaa de invalid email
+
+
+//------------------------------------------------------------------------------
+1.create one method ------>jiski admin ko mail jayega
+2.inside mail -----> there was an issue in this email address or uske aaage woo email address jayega Kindly check this
+3.jahan jahan bhi mail bhj rhe hai wahan wahan pr try catch lgg kr 
+
+catch(MailSendException) or male send exception jb bhi aayegi to ye waala method call krna hai

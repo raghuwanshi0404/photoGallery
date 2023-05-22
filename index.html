@@ -12,10 +12,10 @@
 <body>
     <div id="myModal" class="modal">
         <div class="modal-content">
-             <span class="close">&times;</span>
-            <div id="reel"></div>
-            <a class="prev action" >❮</a>
-            <a class="next action" >❯</a>
+            <span class="close">&times;</span>
+            <div id="reelContainer"></div>
+            <a class="prev action">❮</a>
+            <a class="next action">❯</a>
         </div>
 
     </div>
@@ -24,21 +24,29 @@
         <div class="header">
             <div class="appName">
                 <h1>Photo Gallery</h1>
-                <input type="search" placeholder="search images">
+               
+                <select name="search" id="search">
+                    <option value="all">All Images</option>
+                    <option value="animal">Animal</option>
+                    <option value="nature">Nature</option>
+                </select>
+             </div>
+
+
+
+            </div>
+
+            <div class="img-Container-wrapper">
+                <div class="img-Container">
+
+                </div>
             </div>
         </div>
 
-        <div class="img-Container-wrapper">
-            <div class="img-Container">
-
-            </div>
-        </div>
-    </div>
 
 
 
-
-    <script src="photoGal.js" type="module"></script>
+        <script src="photoGal.js" type="module"></script>
 </body>
 
 </html>

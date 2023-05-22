@@ -57,40 +57,37 @@ export const gallaryData = [
         path    : "images/animal/squirrel4.jpg"
     },
     {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
+        category: "nature",
+        path    : "images/nature/waterfall6.jpg"
+    },
+
+    {
+        category: "nature",
+        path    : "images/nature/waterfall5.jpg"
+    },
+
+    {
+        category: "nature",
+        path    : "images/nature/waterfall4.jpg"
+    },
+
+    {
+        category: "nature",
+        path    : "images/nature/waterfalls3.jpg"
+    },
+
+    {
+        category: "nature",
+        path    : "images/nature/waterfall2.jpg"
+    },
+
+    {
+        category: "nature",
+        path    : "images/nature/waterfalls1.jpg"
     },
     {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
-    },
-    {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
-    },
-    {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
-    },
-    {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
-    },
-    {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
-    },
-    {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
-    },
-    {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
-    },
-    {
-        category: "animal",
-        path    : "images/animal/squirrel4.jpg"
-    },
+        category: "nature",
+        path    : "images/nature/nature.jpg"
+    }
 
 ];

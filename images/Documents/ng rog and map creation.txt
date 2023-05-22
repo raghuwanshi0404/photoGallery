@@ -1,0 +1,177 @@
+*package com.bhaasha.services.export.pdf;
+
+import com.bhaasha.utility.constants.ExportTranslationUtil;
+import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+
+import java.util.ArrayList;
+import java.util.List;
+@AllArgsConstructor
+public class AbacusSalaryPdfService2 {
+
+    private static final Logger logger = LoggerFactory.getLogger(AbacusSalaryPdfService.class);
+    private AbacusSalaryPdfService pdfService;
+    public  List<String> getListOfCells(String preferedLanguage) {
+        logger.info("In  get List Of Cells ");
+        List<String> cellNames = new ArrayList<>();
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.HEADER, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.SERIAL_NUMBER, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.ID, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.UTILISATEUR, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.DATE_INTERVENTION, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.START_END_TIME, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.DUREE_PAYEE, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.SALARIE_HORAIRE, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.MONTANT_ENPERSONNE, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.MONTANT_SUPPLEMENT, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.MONTANT_TELEPHONE, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.MONTANT_VIDEO, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.FRAIS_DE_DEPLACEMENT, preferedLanguage));
+        cellNames.add(pdfService.getTranslatedCellName(ExportTranslationUtil.TOTAL_COST, preferedLanguage));
+        return cellNames;
+    }
+
+}
+*/
+
+
+395
+378 get salary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+switch (i) {
+                        case 11:
+                            cell = bottomRowforTotal.createCell(listOfCellSize.get(i), TOTAL);
+                            cell.setFont(PDType1Font.HELVETICA_BOLD);
+                            break;
+                        case 16:
+                            cell = bottomRowforTotal.createCell(listOfCellSize.get(i), "" + getGrandTotal(pdfServiceData.getTotalCost(), 2, tvaInPercent));
+                            lineStyle1 = new LineStyle(Color.WHITE, 20);
+                            cell.setFont(PDType1Font.HELVETICA);
+                            break;
+                        default:
+                            cell = bottomRowforTotal.createCell(listOfCellSize.get(i), "");
+                            break;
+                    }
+                    getBottomRowCellFormatting(cell, lineStyle1);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

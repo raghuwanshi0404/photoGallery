@@ -1,0 +1,8 @@
+For maven Clean install
+
+Steps :- Go to to your maven project location and open cmd prompt 
+
+
+2. mvn test
+3.mvn clean
+4.mvn clean install

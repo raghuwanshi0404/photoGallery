@@ -1,0 +1,144 @@
+ public static final String TELEFONO = "Telefono";
+    public static final String DD_MM_YYYY_HH_MM_SS = "dd-MM-yyyy HH:mm:ss";
+    public static final String KURSLEITUNG = "Kursleitung";
+    public static final String MEDIATION_INTERCULTURELLE = "Médiation Interculturelle";
+    public static final String GESTION_DE_COURS = "Gestion de cours";
+    public static final String TELEFON = "Telefon";
+    public static final String MEDIAZIONI_INTERCULTURALI = "Mediazioni interculturali";
+    public static final String INTERKULTURELLE_VERMITTLUNGEN = "Interkulturelle Vermittlungen";
+    public static final String GESTIONE_DEL_CORSO = "Gestione del corso";
+
+
+ if ((ADMIN.equals(role) && (SEARCH_BY_USER_ACCOUNT.equals(searchKey) || SEARCH_BY_FEEDBACK.equals(searchKey)))) {
+                query.setParameter("igId", interpreterGroupId);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+else if (bookSession.getUserAccount() != null) {
+                csvRecord.add(bookSession.getUserAccount().getAddressKey());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select bs.bookedby from booksession bs inner join useraccount on bs.useraccount_id = useraccount.id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This file has 598 lines, which is greater than 450 authorized. Split it into smaller files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for german -----"gebucht von","nachverfolgen-ID"
+
+for italian------"prenotato da","ID follow-up"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+
+  "isMobile": true,
+  "password": "123",
+  "preferredLanguage": "en",
+  "userId": "usertests"
+}
+
+
+
+
+
+
+
+
+
+select distinct l.isocode from booksession bs inner join language l on bs.tolanguage_id = l.id inner join useraccount ua on bs.useraccount_id = ua.id where l.isdeleted = false and ua.useraccountmanager_id =:Id

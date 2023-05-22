@@ -1,0 +1,126 @@
+package com.equalsmethod;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class Employee extends Object {
+	
+	public int empId = 0;
+	public String name = null;
+	
+	
+	@Override
+	public int hashCode() {
+//		final int prime = 31;
+//		int result = 1;
+//		result = prime * result + empId;
+//		return result;
+		return 17845;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (empId != other.empId)
+			return false;
+		return true;
+	}
+	
+//	public static void main(String[] args) {
+//		
+//		Employee e1 = new Employee();
+//		e1.empId = 1000;
+//		
+//		Employee e2 = new Employee();
+//		e2.empId = 2000;
+//		
+//		Map<Employee, String> map = new HashMap<>();
+//		map.put(e1, "A");
+//		map.put(e2, "B");
+//		
+//		System.out.println(map.get(e1));
+//		
+//	}
+	
+	public static void main(String[] args) {
+		//HashSet Not ordered , no dupes
+		//LinkedHashSet ordered FIFO , no dupes
+		//TreeSet ordered sorted , no dupes
+		
+//		Set<Integer> set = new HashSet<>();
+//		set.add(1);
+//		set.add(1);
+//		set.add(3);
+//		set.add(2);
+//		set.add(6);
+//		set.add(4);
+//		
+//		set.forEach(x -> System.out.println(x));
+		
+		Set<Employee> setOfEmp = new HashSet<>();
+		
+		Employee e1 = new Employee();
+		e1.empId = 1000;
+		e1.name = "A";
+		
+		Employee e2 = new Employee();
+		e2.empId = 1000;
+		e2.name = "B";
+		
+		setOfEmp.add(e1);
+		setOfEmp.add(e2);
+		
+		System.out.println(setOfEmp.size());
+		setOfEmp.forEach(x -> System.out.println(x.name));
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+}
+
+
+
+
+StudentCustomRepositoryImplementation
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

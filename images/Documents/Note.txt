@@ -1,0 +1,113 @@
+{
+	 
+  "postid": 1,
+  "posttype": "text",
+  "likes":120,
+  "comment":"good",
+  "numberOfShares":12,
+  "comments":{
+  	"noOfComments":120,
+  	"nameOfCommenter":"Ashu",
+  	"comment": "good"
+  }
+
+{
+	 
+  "postid": 2,
+  "posttype": "Vedio",
+  "likes":200,
+  "comment":"Helpfull",
+  "numberOfShares":40,
+  "comments":{
+  	"noOfComments":400,
+  	"nameOfCommenter":"Ashu",
+  	"comment": ""
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url = jdbc:mysql://localhost:3306/javatechie
+spring.datasource.username = root
+spring.datasource.password = Password
+spring.jpa.show-sql = true
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+server.port=9090
+
+
+
+
+git hub password
+qa123pl1234
+
+
+
+
+
+
+
+
+
+
+C:/Users/Raghu/workspace/Complete project/ProjectForFacebook
+
+
+
+
+
+
+
+
+
+
+
+{
+                "deptId": 1002,
+                "name": "IT",
+                "numberOfStud": 250
+            }
+
+
+        "clgid": 2,
+        "name": "Lnct",
+        "noOfStudent": 5000,
+
+
+
+
+
+
+https://github.com/RaghuwanshiDeepak/SpringBoot-jpa-Facebook-posts-and-Comment.git
+
+
+
+
+
+
+
+
+
+
+
+
+product table
+
+ {
+        "pid": 1,
+        "productName": "Laptop",
+        "qty": 2,
+        "price": 100000
+    }

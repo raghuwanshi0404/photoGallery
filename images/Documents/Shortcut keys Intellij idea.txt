@@ -1,0 +1,20 @@
+cntl+shift+r ==> SearchByClassName
+cntl+shift+T ==> SearchByClassNameInJar
+cntl+H ==> search text in entire project
+cntl+cursor click ==> to go in class or method
+cntl+T ==> to open interface or class implementation
+alt+backspace ==> to backtrace previous classes
+cntl+alt+H ==> to check that from where method is called
+cntl+l = to go on a particular line
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ 1.logger.warn("FIXME remove unused parameter isOptionColumnShow ", isOptionColumnShow );
+ 2. logger.warn("FIXME remove unused parameter interpreterId ",interpreterId);
+ 3.

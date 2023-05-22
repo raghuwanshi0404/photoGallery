@@ -1,0 +1,135 @@
+     cellRow.setFillColor(Color.WHITE);
+         cellRow.setFont(PDType1Font.HELVETICA);
+         cellRow.setFontSize(11);
+         cellRow.setLeftBorderStyle(lineStyle);
+         cellRow.setRightBorderStyle(lineStyle);
+-        cellSize++;
+
+
+
+
+ preEntry.appendChild(factor);
+
+
+
+
+AbacusSalaryExportManager.java
+
+
+interpretertimeTravelExportMANAGER  ---->555 TO 583
+
+
+
+
+google-sheet :->>>>>    https://docs.google.com/spreadsheets/d/1C5ULLmTXyzX1I5Hk0r_SbqsJ1y28ANfFDzHK7VSOLMc/edit#gid=982916298
+
+
+
+
+EncryptionDecryptionUtil.java ---->>>>>private static Key generateKey() {
+        return new SecretKeySpec(keyValue, ALGORITHM);
+    }
+    @Value("${application.secret}")
+    public void setKeyValue(String secret) {
+        keyValue = secret.substring(0, 16).getBytes();
+
+
+and 
+@Data
+
+
+
+
+
+            if (csvServiceData.getPatientField() != null && !csvServiceData.getPatientField().isEmpty()) {
+                records.add(csvServiceData.getPatientField());
+            } else {
+                records.add("--");
+            }
+            records.add(Utils.checkIfNotNullAndNotEmpty(csvServiceData.getPatientField())?csvServiceData.getPatientField():"--");
+         } else {
+             records.add("--");
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+class ---->   XMLExportFormatManager 
+
+ String[] payrollType = new String[2];
+        switch (transactionNum) {
+            case 1:
+                payrollType[0] = "Urgent/Nuit/Weekend ";
+                payrollType[1] = "1121";
+                break;
+            case 2:
+                payrollType[0] = "Heures En-personne ";
+                payrollType[1] = "1122";
+                break;
+            case 3:
+                payrollType[0] = "Déplacements ";
+                payrollType[1] = "5104";
+                break;
+            case 4:
+                payrollType[0] = "Minimal Téléphone ";
+                payrollType[1] = "1123";
+                break;
+            case 6:
+                payrollType[0] = "Minimal Vidéo ";
+                payrollType[1] = "1126";
+                break;
+            case 5:
+                payrollType[0] = "Additionnel Téléphone ";
+                payrollType[1] = "1124";
+                break;
+            case 7:
+                payrollType[0] = "Additionel Vidéo ";
+                payrollType[1] = "1127";
+                break;
+            default:
+        }
+        return payrollType;
+
+
+
+
+Abacus
+
+
+  // List<String> cellNames = getListOfCells(lang);
+        // StringBuilder headerText = new StringBuilder(cellNames.get(0));
+        String interpreterHeader = getTranslatedCellName(ExportTranslationUtil.INTERPRETER, "fr");
+        String periodHeader = getTranslatedCellName(PERIOD, "fr");
+        DateFormat createdDate = new SimpleDateFormat(Literals.DD_MM_YYYY);
+        String fromDateValue = createdDate.format(new Date(startDate));
+        String toDateValue = createdDate.format(new Date(endDate));
+
+        File defaultImage = new File(path + "Logo.png");
+        PDDocument document = new PDDocument();
+        PDPage page = new PDPage(new PDRectangle(PDRectangle.A3.getHeight(), PDRectangle.A3.getWidth()));
+        document.addPage(page);
+       // int indexOfSession = 0;
+
+
+
+
+
+
+interpreter 
+  PDPage page = document.getPage(j);
+            float yStartNewPage = page.getMediaBox().getHeight() - (4 * 10);
+            float tableWidth = page.getMediaBox().getWidth() + (7f * 10);
+            float bottomMargin = 70;
+            LineStyle lineStyle = new LineStyle(Color.WHITE, 1);
+            LineStyle lineStyle1 = new LineStyle(Color.WHITE, 20);
+            Cell<PDPage> cell;
+            float yStart = yStartNewPage + (4 * 10);

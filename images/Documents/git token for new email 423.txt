@@ -1,0 +1,55 @@
+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
+
+
+
+
+
+ AND ((a.startTime >= ?2 AND a.startTime < ?3) OR (a.endTime > ?2 AND a.endTime <= ?3) " +
+            "    OR (a.startTime <= ?2 AND a.endTime > ?3))
+
+
+
+ "  AND ((a.startTime >= ?2 AND a.startTime < ?3) AND (a.endTime > ?2 AND a.endTime <= ?3) " +
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @Query(value = "SELECT a.interpreter_id " +
+            " FROM availability a " +
+            " WHERE a.interpreter_id is not null " +
+            "  and a.interpreter_id in (?1) " +
+            "  AND a.isDeleted = false " +
+            "  AND ((a.startTime >= ?2 AND a.startTime < ?3) OR (a.endTime > ?2 AND a.endTime <= ?3) " +
+            "    OR (a.startTime <= ?2 AND a.endTime > ?3)) AND a.session_id != ?4", nativeQuery = true)
+
+
+
+
+1635421500000
+1635422400000

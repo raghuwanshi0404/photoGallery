@@ -1,0 +1,37 @@
+1.
+class name   : InterpretersCommonController.java
+
+method name  : getInterpreters
+
+Descriptionc : Refactor this method to reduce its Cognitive Complexity from 28 to the 20 allowed.
+
+
+2.
+class name   :  PatientFormManager.java
+
+method name  :  fetchPatientFormDetails
+
+Descriptionc :  Add a default case to this switch.
+
+
+3.
+class name   :  VideoConnectService.java
+
+method name  :  getUserBody
+
+Descriptionc :  Define a constant instead of duplicating this literal ">Link</a>" 3 times.
+
+
+4.
+class name   :  PatientFormCommonController.java
+
+method name  :  getPatientForm
+
+Descriptionc :  Merge this if statement with the enclosing one.
+
+5.
+class name   :  TwilioMessagingServiceImpl.java
+
+method name  :  createPushNotification
+
+Descriptionc :  This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally.

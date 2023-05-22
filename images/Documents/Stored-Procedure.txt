@@ -1,0 +1,165 @@
+qazplm@123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE OR REPLACE FUNCTION public.session_for_new_csv_export(
+	groupid bigint,
+	mindate bigint,
+	maxdate bigint)
+    RETURNS refcursor
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+declare
+     result refcursor;
+begin
+		open result for select i.id  As id, coalesce (i.idnumber,'---') As idNumber,coalesce(i.firstname,' ') As firstName,coalesce(i.lastname,' ') As lastName,
+										  sum(r.billedduration)                  As duration,
+										  sum(r.sessioncostforinterpreter)       As cost,
+										  sum(r.salaryamountforunusedtime)       As unusedCost,
+										  sum(r.supplementarycostforinterpreter) As supplement,
+										  sum(r.sessiontravelcost)               As travelCost,
+										  sum(r.totalcostforinterpreter)         As totalCost
+		from report r
+		inner join interpreter i on r.interpreter_id = i.id
+		WHERE r.totalcostforinterpreter > 0
+        AND r.bookingDate BETWEEN mindate 
+		AND maxdate
+        AND r.group_id = groupid
+        group by i.id, i.idnumber;
+
+	  return result;
+end;
+$BODY$;
+
+ALTER FUNCTION public.session_for_new_csv_export(bigint, bigint, bigint)
+    OWNER TO postgres;
+
+
+
+
+
+
+
+
+
+
+to run
+---------------------------------------
+--BEGIN;
+--SELECT public.session_for_new_csv_export(280, 162919620000,1629196200002);
+--
+--FETCH ALL IN "<unnamed portal 1>";
+--)
+
+
+
+
+
+hello sir i have done stored procedure but my api is not working 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------
+
+-- FUNCTION: public.find_sessions_for_new_csv_export(bigint, bigint, bigint, bigint)
+
+-- DROP FUNCTION public.find_sessions_for_new_csv_export(bigint, bigint, bigint, bigint);
+
+CREATE OR REPLACE FUNCTION public.find_sessions_for_new_csv_export(
+	mindate bigint,
+	maxdate bigint,
+	interpreterid bigint,
+	groupid bigint)
+    RETURNS refcursor
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+AS $BODY$
+declare
+result refcursor;
+begin
+
+open result for select i.id  As id, coalesce (i.idnumber,'---') As idNumber,coalesce(i.firstname,' ') As firstName,coalesce(i.lastname,' ') As lastName,
+                             
+							 sum(r.billedduration)                  As duration,
+						         sum(r.sessioncostforinterpreter)       As cost,
+							 sum(r.salaryamountforunusedtime)       As unusedCost,
+							 sum(r.supplementarycostforinterpreter) As supplement,
+							 sum(r.sessiontravelcost)               As travelCost,
+							 sum(r.totalcostforinterpreter)         As totalCost
+
+from report r inner join interpreter i on r.interpreter_id = i.id
+WHERE r.totalcostforinterpreter > 0
+AND r.bookingDate BETWEEN mindate 
+AND maxdate
+AND r.group_id = groupid
+group by i.id, i.idnumber;
+
+return result;
+end;
+$BODY$;
+
+ALTER FUNCTION public.find_sessions_for_new_csv_export(bigint, bigint, bigint, bigint)
+    OWNER TO postgres;
+
+
+-----------to run
+Begin
+
+--SELECT public.find_sessions_for_new_csv_export(1629196200000,1629196200002,27597,280)
+--FETCH ALL IN "<unnamed portal 1>";
+
+--booking date --->1629196200000 from report
+--to 1629196200002
+--interpreter_id---->27597
+--group_id -->280
+
+select interpreter_id,bookingDate,group_id,totalcostforinterpreter, from report;

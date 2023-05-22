@@ -1,0 +1,17 @@
+1.pending ----> confirm ---->to validate -----> complete
+   
+pending ---->refused 
+pending  ---->rescheduled
+pending ---->cancel
+
+
+
+confirm --->>rescheduled/cancel/follow up
+
+
+to validate ----> unvalidate state after 7 days
+
+*if an immidiate session is not confirmed with in 10 minutes then it will automatically cancelled
+
+
+

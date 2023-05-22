@@ -1,0 +1,16 @@
+ try {
+                if (method.getName().startsWith("get")) {
+                    Object data = method.invoke(obj);
+                    map.put(method.getName(), data != null ? ((long) data.toString().length()) : 0L);
+                }
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                // e.printStackTrace();
+                log.debug("Exception Caught ! :", e);
+
+            } //catch (InvocationTargetException e) {
+            // e.printStackTrace();
+            //log.debug("Exception Caught ! :",e);
+           //}
+        });
+        return map;
+    }

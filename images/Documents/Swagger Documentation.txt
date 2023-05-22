@@ -1,0 +1,210 @@
+1.USER_ACCOUNT_LOCATIONS        line no 81    /v4/user-accounts/{userAccountId}/locations                                               (common )userAccount
+
+2.USER_ACCOUNT_PATIENTS         line no 120   /v4/user-account/{userAccountId}/patients UserAccount Patient List                        (Admin)
+
+
+3.USER_ACCOUNT_PATIENT          line no       /v4/user-account/patient                                                                  (common)userAccount     post
+3.USERS_API_BASE_PATH           line no 110   /v4/users Create User								        (common)user            post
+4.USERS_LIST_BY_USER_ACCOUNT    line no 71    /v4/user-accounts/{userAccountId}/users 						        (common)user            get	
+5.HELP_SUPPORT_SETTINGS_API     line no 101   /v4/help-support-settings 								(common)Help&Suport     post 
+6.PATIENT_FORM_BY_ORGANIZATION  line no 98    /v4/patient/form/{organizationId}           						(common)patient-form    get
+7.AVAILABLE_INTERPRETERS        line no 850   /v4/available-interpreters                     			     	                (Common)Sessions k andar get
+8.PATIENT_LIST_BY_INTERPRETER   line no 250   /v5/patient-list                        							(common)Session version 5   check krna hai
+9.SEARCH_FILTER_BOOK_SESSIONS   line no 213   /v5/search-filter-book-sessions 							        (common)Session version 5
+10.INTERPRETER_SESSION_VALIDATION line no 191 /v5/session-validate        								(common)session version 5
+12.USER_LIST_BY_INTERPRETER       line no 143 /v5/user-list 										(common)session version 5
+
+
+
+                   *********Admin******
+
+13.csv                                          /v4/export-format/csv                       Working fine                                export format api's
+14.                                             /v4/export-format/csv(put)                  Working fine                                export format api's
+15.                                             /v4/export-format/customer(put)             Working fine 				export format api's
+16.                                             /v4/export-format/customer(get)             Working fine				export format api's
+
+
+
+
+
+
+1.yellow one is useraccount                          https://pmubootstaging.bhaasha.ch/#/app/session/12986
+2.blue one is interpreterAccount
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.user acccount location admin controller line no 75 deleteUserAccountLocation
+
+ @ApiOperation(value = "This Api can be used to delete UserAccount Location Using userAccountLocationId", response = ApiSuccessResponse.class)  ---------------  Done
+
+2.useraccountpatientadmincontroller   line no ---120  getUserAccountPatientsList            ------->Done
+
+   @Secured({"ADMIN", "INTERPRETER_GRP_MANAGER", "MANAGER", "USER_ACCOUNT_MANAGER"})
+    @ApiOperation(value = "UserAccount Patient List" ,notes = "This Api is responsible for fetching  Patient List.\n " +
+                          "Description : In the request of this api there are four parameters which are userAccountId as path variable,limit,offset and searchText as query params.")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "UserAccount Patients retrieve successfully",response = ApiSuccessResponse.class)})
+    @GetMapping(USER_ACCOUNT_PATIENTS)
+    public ResponseEntity<Object> getUserAccountPatientsList(@ApiParam(value = "This is the userAccount id")
+                                                                 @PathVariable Long userAccountId,
+                                                             @ApiParam(value = "This is the limit")
+                                                                 @RequestParam(defaultValue = "25") Integer limit,
+                                                             @ApiParam(value = "This is the offset")
+                                                                 @RequestParam(defaultValue = "0") Integer offset,
+                                                             @ApiParam(value = "This is the search text")
+                                                                 @RequestParam(defaultValue = "") String searchText) {           ---------------------------------Done
+
+
+
+
+3. useraccountlocationcommoncontroller  method ------------>createLocationForUserAccount
+
+a)    public ResponseEntity<Object> createLocationForUserAccount(
+            @ApiParam(name = "UserAccountLocation", value = "Required details for creating user account location", required = true)
+            @Valid @RequestBody UserAccountLocationDTO userAccountLocationDTO) {                  ------->done pr isko check nai krwana hai
+
+
+
+b)  @Secured({"ADMIN", "INTERPRETER_GRP_MANAGER", "USER_ACCOUNT_MANAGER"})
+    @ApiOperation(value = "UserAccount Location List" ,notes = "This Api is responsible for fetching UserAccount Location")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = " UserAccount Location retrieve successfully",response = ApiSuccessResponse.class)})
+    @GetMapping(UrlMapping.USER_ACCOUNT_LOCATIONS)
+    public ResponseEntity<Object> getUserAccountLocationsList(@ApiParam(value = "This is the userAccount id")
+                                                                  @PathVariable Long userAccountId,
+                                                              @ApiParam(value = "This is the limit")
+                                                                  @RequestParam(defaultValue = "-1") Integer limit,
+                                                              @ApiParam(value = "This is the offset")
+                                                                  @RequestParam(defaultValue = "0") Integer offset,
+                                                              @ApiParam(value = "This is the search text")
+                                                                  @RequestParam(defaultValue = "") String searchText) {          -------------------------->Done
+
+
+
+c)@ApiOperation(value = "This Api can be used to get UserAccount Location List", response = ApiSuccessResponse.class)  method ---------------> getUserAccountLocationsListSame   -------> done
+
+
+  
+4. usersessioncontroller        method -----------------------> findBusyEventByDate   -------->Done
+
+    @Secured({"USER_ACCOUNT_MANAGER"})
+    @GetMapping("/activity-sessions/{startAvailabilityDate}/{endAvailabilityDate}")
+    @ApiOperation(value = "Get busy events by Availability date", notes = "This API is responsible for fetching a list of busy events between start availability date and end availability date (Date range)")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "User busy event activity retrieve successfully", response = ApiSuccessResponse.class)})
+    public ResponseEntity<Object> findBusyEventByDate(@ApiParam(name = "startAvailabilityDate", value = "This is the start availability date") @PathVariable Long startAvailabilityDate,
+                                                      @ApiParam(name = "endAvailabilityDate", value = "This is the end availability date") @PathVariable Long endAvailabilityDate,
+                                                      @ApiParam(name = "Search Sessions", value = "This is the search sessions") @Valid SearchSessionDTO searchSessionDTO,
+                                                      @ApiParam(name = "timeZoneOffset", value = "This is the time Zone Offset", required = false) @RequestParam(required = false) Long timeZoneOffset)
+
+
+
+
+
+5.Helpsupportsettingcommoncontroller method -------------------->createHelpSupportSetting   ------------>Done
+
+       
+
+
+
+6.patientformcommoncontroller  method ----------------------------getPatientForm line no 98       ---------->Done
+
+
+
+
+
+7.booksessioncommoncontroller    method ----------> fetchAvailableInterpreters line no 840                              ---------->Done
+
+
+
+8.usercontrollerv4         1. method ----------------->   getUsersListByUserAccount line no 70  ------->Done
+                             2. method ---------------->    createUser line no 110              -------->Done
+
+a)                                     
+
+b)    @Secured({"ADMIN", "USER_ACCOUNT_MANAGER", "INTERPRETER_GRP_MANAGER", "MANAGER"})
+    @ApiOperation(value = "Create User", notes = "This api is used to create user")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "user created successfully", response = ApiSuccessResponse.class)})
+    @PostMapping(UrlMapping.USERS_API_BASE_PATH)
+    public ResponseEntity<Object> createUser(@ApiParam(name = "UserAccountUser", value = "Required fields for creating user", required = true)
+                                                 @RequestBody  UserAccountUserDTO userAccountUserDTO) {
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+api----------------
+1.getAllSuggestedLanguage
